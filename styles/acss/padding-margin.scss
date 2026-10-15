@@ -1,0 +1,48 @@
+$fields: (
+  a: "",
+  y: "",
+  x: "",
+  t: top,
+  b: bottom,
+  l: left,
+  r: right,
+);
+
+// px2rem 版
+@each $k, $v in $fields {
+  @for $n from -50 through 100 {
+    @if $k== y {
+      .m#{$k}-#{$n} {
+        margin-top: px2rem($n);
+        margin-bottom: px2rem($n);
+      }
+      .p#{$k}-#{$n} {
+        padding-top: px2rem($n);
+        padding-bottom: px2rem($n);
+      }
+    } @else if $k == x {
+      .m#{$k}-#{$n} {
+		margin-left: px2rem($n);
+		margin-right: px2rem($n);
+      }
+      .p#{$k}-#{$n} {
+	    padding-left: px2rem($n);
+	    padding-right: px2rem($n);
+      }
+    } @else if $k ==a {
+      .m-#{$n} {
+        margin: px2rem($n);
+      }
+      .p-#{$n} {
+        padding: px2rem($n);
+      }
+    } @else {
+      .m#{$k}-#{$n} {
+        margin-#{$v}: px2rem($n);
+      }
+      .p#{$k}-#{$n} {
+        padding-#{$v}: px2rem($n);
+      }
+    }
+  }
+}

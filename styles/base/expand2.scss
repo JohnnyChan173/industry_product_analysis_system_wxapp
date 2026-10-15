@@ -1,0 +1,36 @@
+.form-item {
+	display:flex;
+	align-items: center;
+	> p {
+		padding: px2rem(6) 0;
+		&:nth-child(1) {
+			color:#aaa;
+			width: px2rem(110);
+			flex: 0 0 px2rem(110);
+			margin-right:px2rem(6);
+			text-align: right;
+			&::after {
+				content:":";
+			}
+		}
+		&:nth-child(2) {
+			color:#666;
+			flex:1;
+			@include ellipsis;
+		}
+	}
+}
+
+.required {
+	&::before {
+		display: inline-block;
+		margin-right: 4px;
+		color: #ff4d4f;
+		font-size:px2rem(20);
+		line-height: px2rem(20);
+		height:px2rem(16);
+		content: '*';
+		vertical-align: middle;
+	}
+}
+

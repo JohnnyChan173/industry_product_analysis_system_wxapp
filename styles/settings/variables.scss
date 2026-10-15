@@ -1,0 +1,75 @@
+
+// 字体大小
+$font-size-ss: 12px;
+$font-size-s: 14px;
+$font-size: 16px;
+$font-size-l: 20px;
+$font-size-ll: 24px;
+
+// 检测类型数据颜色
+$detection-color-0: #2c2be1;
+$detection-color-1: #32a6f9;
+$detection-color-2: #e36d2c;
+$detection-color-3: #d5c018;
+$detection-color-4: #2c9325;
+
+// 颜色映射
+$color-short-maps: (
+  pr: primary,
+  pr-l: primary-l,
+  pr-d: primary-d,
+  se-l: secondary-l,
+  se: secondary,
+  se-d: secondary-d,
+  te: tertiary,
+  su: success,
+  su-l: success-l,
+  su-d: success-d,
+  da: danger,
+  da-l: danger-l,
+  da-d: danger-d,
+  wa: warn,
+  wa-l: warn-l,
+  wa-d: warn-d
+);
+
+// 动画时间
+$transition-time-f: 250ms;
+$transition-time: 500ms;
+$transition-time-s: 1000ms;
+
+// clave sidebar
+$clavePrimary: #59aaf5;
+$menuText: #333;
+$menuActiveText: #409eff;
+$subMenuActiveText: lighten(#333, 50%);
+
+// 侧边栏 菜单 背景等
+$menuBg: #fff;
+$menuHover: #eaf1fc;
+$submenuBg: #dfe7f4;
+
+$sideBarWidth: 170px;
+$sideBarGap: 2px; // 侧边栏与内容区域的间隙
+
+// $workspace-navbar-height: 78px;
+$workspace-navbar-height: auto;
+
+$border-radius: 5px;
+
+// 导航栏参数
+$statusBar-height: var(--status-bar-height);
+$titleBar-height: px2rem(42);
+$navBar-height: calc(#{$titleBar-height} + #{$statusBar-height});
+
+$tabbar-height: px2rem(52);
+
+$main-page-bcg: #f3f3f3;
+
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  sideBarWidth: $sideBarWidth;
+  transitionTime: $transition-time;
+}

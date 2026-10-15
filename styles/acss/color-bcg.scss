@@ -1,0 +1,66 @@
+// 颜色
+@each $k, $v in $color-short-maps {
+  // 属性样式
+  [co-#{$k}] {
+    color: var(--color-#{$v});
+  }
+
+  // 类名样式
+  .co-#{$k} {
+    color: var(--color-#{$v});
+  }
+
+  // 背景色 - 属性样式
+  [bg-#{$k}] {
+    background: var(--color-#{$v});
+  }
+
+  // 背景色 - 类名样式
+  .bg-#{$k} {
+    background: var(--color-#{$v});
+  }
+
+  // 划过变主色
+  [ho-co-#{$k}] {
+    cursor: pointer;
+    &:hover {
+      color: var(--color-#{$v});
+    }
+  }
+
+  // 边框
+  [bo-#{$k}] {
+    border: 1px solid var(--color-#{$v});
+  }
+}
+
+// 边框色
+@each $k, $v in (to: top, bo: bottom, le: left, ri: right, al: "") {
+  @for $n from 1 through 3 {
+    [bo-#{$k}-#{$n}] {
+      @if ($v == "") {
+        border: $n + px solid var(--color-secondary);
+      } @else {
+        border-#{$v}: $n + px solid var(--color-secondary);
+      }
+      &[bo-co-pr] {
+        border-color: var(--color-primary);
+      }
+      &[bo-co-pr-d] {
+        border-color: var(--color-primary-d);
+      }
+    }
+  }
+}
+
+.co-333 {
+  color: #333;
+}
+
+.co-999 {
+  color: #999;
+}
+
+.co-aaa {
+  color: #aaa;
+}

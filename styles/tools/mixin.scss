@@ -1,0 +1,145 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    font-size: 0;
+    clear: both;
+    height: 0;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin triangle($width, $height, $color, $direction) {
+  $width: $width/2;
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+
+  @if $direction==up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  } @else if $direction==down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}
+
+@mixin innerRouterStyle {
+  position: absolute;
+  box-sizing: border-box;
+  max-width: var(--screen-width-xl);
+  min-width: var(--screen-width-l);
+  padding: 20px;
+  width: 100%;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin beautifyScroll {
+  &::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #eee;
+    // border-radius: 3em;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10em;
+  }
+}
+
+// 伪元素竖线
+@mixin pseudoVerticalLine($position: "left", $height: 100%) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    @if ($position == "left") {
+      left: 0px;
+    } @else {
+      right: 0px;
+    }
+    width: 1px;
+    height: $height;
+    border-radius: 99999px;
+    background-color: #ccc;
+  }
+}
+
+// 简单阴影
+@mixin simple-shadow($mult: 1, $ox: 0px, $oy: 0px, $color: var(--color-shadow-l)) {
+  box-shadow: $ox $oy #{$mult * 3px} #{$mult * 1px} $color;
+}
+
+// 滑过透明度变化
+@mixin hover-opacity($opacity: 0.85) {
+  cursor: pointer;
+  transition: opacity, filter $transition-time-f;
+  &:hover {
+    @if ($opacity <=1) {
+      opacity: $opacity;
+    } @else {
+      filter: brightness($opacity);
+    }
+  }
+}
+
+// 矩形垂直图标 如 ■ 你好
+@mixin rect-vertical {
+	position: relative;
+	padding-left: px2rem(8);
+	
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		// top: 50%;
+		// transform: translateY(-50%);
+		width: px2rem(4);
+		height: calc(100% - #{px2rem(2)});
+		background: var(--color-primary); 
+		@content;
+	}
+		
+}

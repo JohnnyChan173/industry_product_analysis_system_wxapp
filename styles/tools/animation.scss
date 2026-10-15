@@ -1,0 +1,68 @@
+/* 动画相关 */
+
+// 通过 after 去完成通用化的 圆底色效果
+@mixin ani-circle-zoom {
+	position: relative;
+	z-index: 1;
+	overflow:hidden;
+	&::after {
+		content: '';
+		position: absolute;
+		@include center;
+		z-index: 0;
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 9999px;
+		animation: ani-circle-zoom $transition-time cubic-bezier(.04,1.16,.98,.94) forwards;
+		background: rgba(0,0,0,0.15);
+		// 外部可传入样式进行覆盖展
+		@content;
+	}
+}
+
+@mixin ani-bcg-fade {
+	position: relative;
+	z-index: 1;
+	overflow:hidden;
+	&::after {
+		content: '';
+		position: absolute;
+		@include center;
+		z-index: 0;
+		right: -10px;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		animation: ani-bcg-fade $transition-time cubic-bezier(.04,1.16,.98,.94) forwards;
+		background: rgba(0,0,0,0.05);
+		@content;
+	}
+}
+
+@keyframes ani-circle-zoom {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+
+@keyframes ani-bcg-fade {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,28 @@
+/* 内部方法使用
+   如颜色生成
+*/
+
+/* 装饰颜色：
+    .xxx.pl.pr  通用边框上色
+    .xxx.pr  通用背景上色
+    集成 primary success danger warn 浅、原、深（3色）
+    @param {} $subClass 上色跟的节点（加空格标识子节点）
+    @param {} $attrs 期望上色的属性（逗号分隔）
+    @param {} $noColorAttrs 期望透明的属性（逗号分隔）
+
+      - 示例： @include decorateColor('::after','background-color','color')
+*/
+@mixin decorateColor($subClass: "", $attrs: "color", $noColorAttrs: "") {
+  @each $k, $v in $color-short-maps {
+    &.#{$k}#{$subClass} {
+      // 需要上色的属性
+      @each $attr in $attrs {
+        #{$attr}: var(--color-#{$v});
+      }
+      // 需要透明的属性
+      @each $noColorAttr in $noColorAttrs {
+        #{$noColorAttr}: var(--color-tertiary);
+      }
+    }
+  }
+}

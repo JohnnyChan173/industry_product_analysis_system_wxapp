@@ -1,0 +1,13 @@
+$baseWidth: 375px;
+
+@function px2rem($pxNumber) {
+	// @if unitless($pxNumber)  {
+	// 	$pxNumber: $pxNumber * 1px;
+	// }
+	// @return ($pxNumber / $baseWidth * 10) + rem;
+	@return $pxNumber + px;
+}
+
+:export {
+	baseWidth: $baseWidth
+}

@@ -1,0 +1,21 @@
+/**
+  表格 样式新增
+*/
+.el-table {
+  
+  &.style-1 {
+    th.is-leaf {
+      background: #e6ebf2;
+      color: #333;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    
+    + .el-pagination {
+      margin-top: 8px;
+      text-align: right;
+    }
+
+  }
+
+}

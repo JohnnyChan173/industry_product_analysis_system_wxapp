@@ -1,0 +1,50 @@
+:root {
+  // 背景色
+  --bcg-primary: #f0f2f5;
+  --bcg-secondary: #fff;
+
+  // 颜色
+  --color-primary-d: #2369cd; // 深蓝
+  // --color-primary: #65a2ff; // 蓝
+  --color-primary: #3c9cff; // 蓝
+  --color-primary-l: #94b5e8; // 浅蓝
+  --color-secondary-d: #666; // 灰色
+  --color-secondary: #aaa; // 灰色
+  --color-secondary-l: #ccc; // 灰色
+  --color-tertiary: #fff; // 白色
+
+  --color-success-d: #147b43; // 深绿
+  --color-success: #119e50; // 绿
+  --color-success-l: #55b17f; // 浅绿
+
+  --color-warn-d: #c07e1c; // 深黄
+  --color-warn: #d09031; // 黄
+  --color-warn-l: #eab463; // 浅黄
+
+  --color-danger-d: #df0505; // 深红
+  --color-danger: #fd1919; // 红
+  --color-danger-l: #ef7070; // 浅红
+
+  // 阴影色
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-shadow-l: rgba(0, 0, 0, 0.15);
+  --color-shadow-ll: rgba(0, 0, 0, 0.05);
+
+  // 字体大小(px2rem版 需要注释掉 不适用，px2rem版维护在 settings/variables.scss)
+  // --font-size-ss: 12px;
+  // --font-size-s: 14px;
+  // --font-size: 16px;
+  // --font-size-l: 20px;
+  // --font-size-ll: 24px;
+  
+  // 字体颜色
+  --font-color-primary: #333;
+  --font-color-primary-l: #999;
+  --font-color-secondary: #ccc;
+
+  // 适配尺寸
+  --screen-width-s: 720px;
+  --screen-width-md: 992px;
+  --screen-width-l: 1080px;
+  --screen-width-xl: 1350px;
+}

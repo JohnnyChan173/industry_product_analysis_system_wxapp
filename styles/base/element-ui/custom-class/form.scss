@@ -1,0 +1,61 @@
+.el-form {
+  &.style-1 {
+    max-width: var(--screen-width-s);
+    .el-select,
+    .el-cascader {
+      width: 100%;
+    }
+
+    .el-form-item__label {
+      white-space: nowrap;
+      direction: rtl;
+    }
+
+    .el-form-item.is-required:not(.is-no-asterisk)
+      .el-form-item__label-wrap
+      > .el-form-item__label:before,
+    .el-form-item.is-required:not(.is-no-asterisk)
+      > .el-form-item__label:before {
+      content: "";
+    }
+
+    .el-form-item.is-required:not(.is-no-asterisk)
+      .el-form-item__label-wrap
+      > .el-form-item__label:after,
+    .el-form-item.is-required:not(.is-no-asterisk)
+      > .el-form-item__label:after {
+      content: "*";
+      color: #f56c6c;
+      margin-right: 4px;
+      font-size: 18px;
+      top: 4px;
+      position: relative;
+    }
+
+    // 文本框
+    .el-textarea__inner {
+      height: 100px !important;
+      min-height: 100px !important;
+    }
+  }
+  &.disabled {
+    .el-button,
+    .el-upload,
+    .el-upload__tip,
+    .el-upload-list__item-status-label,
+    .el-input__suffix,
+    .el-form-item__label::before,
+    .el-form-item__label::after {
+      display: none;
+    }
+    .el-input__inner,
+    .el-textarea__inner {
+      background-color: transparent;
+      border-color: #ffffff;
+      color: #666;
+      cursor: default!important;
+      resize: none; 
+    }
+    
+  }
+}

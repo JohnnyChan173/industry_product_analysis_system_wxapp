@@ -1,0 +1,59 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "可信数改普及版终端-登录页"
+			}
+		},
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "可信数改普及版终端"
+			}
+		},
+		{
+			"path": "pages/registration-add/index",
+			"style": {
+				"navigationBarTitleText": "产线生产登记-创建"
+			}
+		},
+		{
+			"path": "pages/registration-detail/index",
+			"style": {
+				"navigationBarTitleText": "产线生产登记-详情"
+			}
+		},
+		{
+			"path": "pages/addon-detail/index",
+			"style": {
+				"navigationBarTitleText": "安灯事件详情"
+			}
+		},
+		{
+			"path": "pages/gateway-bind-station/index",
+			"style": {
+				"navigationBarTitleText": "网关绑定工位(模组)"
+			}
+		},
+		{
+			"path": "pages/station-bind-module/index",
+			"style": {
+				"navigationBarTitleText": "工位绑定模组"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "可信数改普及版终端",
+		"navigationBarBackgroundColor": "#279CF2",
+		"backgroundColor": "#279CF2",
+		"app-plus": {
+			"bounce": "none"
+		}
+	},
+	"uniIdRouter": {},
+	"sitemapLocation": "sitemap.json"
+}

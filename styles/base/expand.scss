@@ -1,0 +1,153 @@
+/*
+  扩展样式类名：
+  开设命名前缀： kx-
+*/
+// 盒 通用布局
+.kx-ct {
+  @include innerRouterStyle;
+  // 盒内 顶部导航 通用布局
+  &-nav {
+    width: 100%;
+    display: inline-block;
+    height: $workspace-navbar-height;
+    > div,
+    > p,
+    > button {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    div + div,
+    div + button,
+    button + div,
+    button + button {
+      margin-left: 8px;
+    }
+  }
+}
+
+// 提示文字
+.kx-tip {
+  font-size: var(--font-size-s);
+  color: var(--font-color-primary-l);
+  padding: 6px 3px;
+}
+
+// 边框化
+.kx-button {
+  border: 1px solid var(--color-secondary);
+  background: var(--color-secondary);
+  color: var(--color-tertiary);
+  padding: 4px 9px;
+  @include center;
+  display: inline-flex;
+  @include hover-opacity;
+  &.pl {
+    background-color: transparent;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+  }
+  &.sm {
+    font-size: var(--font-size-s);
+    padding: 2px 5px;
+  }
+  @include decorateColor(".pl", (color, border-color), (background-color));
+  @include decorateColor("", (background-color), (color, border-color));
+}
+
+// 矩形（如：━ 已认证）
+// .kx-icon-rect {
+//   position: relative;
+//   padding-left: 16px;
+//   @include decorateColor("::after", "background-color");
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     display: block;
+//     width: 12px;
+//     height: 4px;
+//     left: 0px;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     border-radius: 99999px;
+//     background-color: #aaa;
+//   }
+// }
+
+// 状态式按钮（左侧圆圈 + 底色）
+.kx-status-btn {
+  position: relative;
+  background-color: #f3f3f3;
+  color: #aaa;
+  padding: 4px 5px;
+  padding-left: 14px;
+  border-radius: $border-radius;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 99999px;
+    background-color: #aaa;
+  }
+  &.pr {
+    background-color: #eef6fe;
+    color: var(--color-primary);
+    &::after {
+      background-color: var(--color-primary);
+    }
+  }
+  &.su {
+    background-color: #e7f5ed;
+    color: var(--color-success);
+    &::after {
+      background-color: var(--color-success);
+    }
+  }
+  &.da {
+    background-color: #ffe5e5;
+    color: var(--color-danger);
+    &::after {
+      background-color: var(--color-danger);
+    }
+  }
+}
+
+// 文字式按钮
+.kx-text-btn {
+  padding: 0px 8px;
+  font-size: 14px;
+  color: var(--color-primary-d);
+  @include hover-opacity();
+}
+
+.kx-label {
+  font-size: var(--font-size);
+  color: var(--font-color-primary-l);
+  margin: 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-secondary-l);
+}
+
+// 检测数据颜色
+.kx-detection-color {
+  &-0 {
+    color: $detection-color-0;
+  }
+  &-1 {
+    color: $detection-color-1;
+  }
+  &-2 {
+    color: $detection-color-2;
+  }
+  &-3 {
+    color: $detection-color-3;
+  }
+  &-4 {
+    color: $detection-color-4;
+  }
+}
+

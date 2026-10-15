@@ -1,0 +1,12 @@
+@for $v from 0 through 100 {
+    [wi-#{$v}] {
+        width: #{$v + "%"};
+    }
+    [he-#{$v}] {
+        height: #{$v + "%"};
+    }
+}
+
+[wi-au] {
+    width: auto;
+}

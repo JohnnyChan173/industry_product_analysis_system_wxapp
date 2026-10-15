@@ -1,0 +1,30 @@
+/*  
+	样式集
+*/
+@import "./iconfont/iconfont.scss";
+@import "./base/index.scss";
+@import "./acss/index.scss";
+
+.u-number-box {
+	.u-number-box__minus,
+	.u-number-box__plus {
+		width: 32px !important;
+		border: 1px solid #ccc !important;
+	}
+	
+	.u-number-box__input {
+		margin: 0 !important;
+		width: 52px !important;
+		height: 32px !important;
+		border-top: 1px solid #ccc !important;
+		border-bottom: 1px solid #ccc !important;
+		background-color: #fff  !important;
+	}
+	&.large {
+		zoom: 1.2;
+	}
+	&.small {
+		zoom: 0.85;
+	}
+}
+

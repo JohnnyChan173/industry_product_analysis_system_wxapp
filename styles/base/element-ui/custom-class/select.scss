@@ -1,0 +1,17 @@
+/**
+  输入框 样式新增
+*/
+.el-select {
+  &.auto {
+    width: auto;
+  }
+  &.small {
+    width: 160px;
+  }
+  &.medium {
+    width: 220px;
+  }
+  &.large {
+    width: 280px;
+  }
+}

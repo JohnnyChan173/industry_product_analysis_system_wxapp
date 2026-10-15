@@ -1,0 +1,198 @@
+@import "./dimension.scss";
+@import "./padding-margin.scss";
+@import "./color-bcg.scss";
+
+/* ACSS 集合 */
+.rotate-180 {
+	transform: rotate(180deg);
+}
+
+// 布局
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+  .justify-center{
+	justify-content: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+// 点击区域扩大
+.expand {
+  position: relative;
+  display: block;
+}
+
+.expand::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: -10px;
+  bottom: -10px;
+}
+
+// 定位
+.relative {
+  position: relative;
+}
+
+// 超出
+.overflow-hidden {
+  overflow: hidden;
+}
+
+// 文字垂直对齐
+.ve-al-mi {
+  vertical-align: middle;
+}
+
+// 文字水平对齐方式
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+// 文字垂直对齐方式
+.items-center {
+  align-items: center;
+}
+
+// 圆角
+@for $i from 1 through 50 {
+  .border-radius-#{$i} {
+    border-radius: $i + px;
+  }
+}
+
+// 字体粗细
+.text-bold {
+  font-weight: bold;
+}
+
+.z-index-99 {
+  z-index: 99;
+}
+
+// 下划线
+.underline {
+	text-decoration: underline;
+}
+
+// 划过下划线
+.hover-undeline {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.hover-opacity {
+  @include hover-opacity;
+}
+
+// 全局竖线
+.vertical-line-left {
+  @include pseudoVerticalLine(left);
+}
+.vertical-line-right {
+  @include pseudoVerticalLine(right);
+}
+
+// 浮动
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+// 字体大小
+.font-size {
+  // font-size: var(--font-size);
+  font-size: $font-size;
+}
+
+// 字体大小 其他号
+@each $k,$v in (
+	s: $font-size-s, 
+	ss: $font-size-ss, 
+	l: $font-size-l, 
+	ll: $font-size-ll
+){
+  // [fo-si-#{$i}] {
+  //   font-size: var(--font-size-#{$i});
+  // }
+  .font-size-#{$k} {
+    font-size: $v;
+  }
+}
+
+// 超文本省略
+.ellipsis {
+  @include ellipsis(1);
+}
+
+// 清除浮动
+.clearfix {
+  @include clearfix;
+}
+
+.box-shadow {
+  box-shadow: 0 0 3px 1px var(--color-shadow-l);
+}
+
+.pointer-events-none {
+	pointer-events: none;
+}
+
+.whitespace-nowrap {
+	 white-space: nowrap;
+}
+
+.cell {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	color: #999;
+	margin-top: 8px;
+
+	&-field {
+		padding-right: 8px;
+		flex: 0 0 70px;
+		white-space: nowrap;
+		text-align: right;
+	}
+
+	&-value {
+		flex: 1
+	}
+}

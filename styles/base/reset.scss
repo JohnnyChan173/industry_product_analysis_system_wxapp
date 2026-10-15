@@ -1,0 +1,60 @@
+/* 基础样式复写 */
+
+body {
+  height: 100%;
+  overflow: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+  color: #333;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 14rpx;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+div:focus {
+  outline: none;
+}
+
+body {
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}
+
+// 微信样式覆盖
+input {
+	min-height: auto;
+	height: auto;
+}
+
+view {
+	box-sizing: border-box;
+}
